@@ -110,3 +110,8 @@ I use the Makefile and make to synchronize my blogs, picasa as well as my static
 
 Good luck :)
 
+* Feature I will implement or would like to see implemented
+
+- do not synchronize non modified posts (it takes ages for a big blog)
+- some way to specify whether or not twitter should be informed of the new post
+- a tool to talk to google plus, twitter, facebook, etc to promote your posts on your social networks 

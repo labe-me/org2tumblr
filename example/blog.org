@@ -6,6 +6,7 @@
 :USER: my-tumblr-user-email@example.com
 :END:
 * This is a local draft
+
 Bla bla bla bla.
 
 Show an image from picasa:
@@ -25,7 +26,7 @@ Do some links:
 
 This should fix the post date.
 
-* DONE An article which will be published
+* DONE An article which will be published                    :mytag:othertag:
 CLOSED: [2012-02-01 Wed 13:29]
 
 Sooooo easy :)
