@@ -22,10 +22,10 @@ Since this project is a quick hack, don't expect it to work on your computer wit
   : gem install tumblr-rb
 
 - googlecl
-  http://code.google.com/p/googlecl/wiki/Install
+  [[http://code.google.com/p/googlecl/wiki/Install]]
 
 - haxe and neko
-  http://haxe.org
+  [[http://haxe.org]]
 
 - make
 
