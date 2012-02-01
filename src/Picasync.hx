@@ -1,3 +1,9 @@
+//
+// Sync an image folder to a picasa album.
+//
+// Author: Laurent Bedubourg <laurent@labe.me>
+//
+
 typedef CacheEntry = {
     mtime:Date,
     md5:String,

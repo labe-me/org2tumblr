@@ -7,7 +7,8 @@
 // Original Markdown Copyright (c) 2004-2005 John Gruber
 //   <http://daringfireball.net/projects/markdown/>
 //
-
+// Fixed and edited by Laurent Bedubourg
+//   <laurent@labe.me>
 //
 // Mdown usage:
 //

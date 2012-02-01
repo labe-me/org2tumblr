@@ -1,6 +1,8 @@
+//
 // tumblr-rb wrapper
 //
 // Author: Laurent Bedubourg <laurent@labe.me>
+//
 
 class Tumblr {
     static var TUMBLR = "/usr/bin/tumblr";

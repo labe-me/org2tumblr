@@ -1,3 +1,4 @@
+//
 // Googlecl Picasa command wrapper
 //
 // Requires googlecl
@@ -14,6 +15,7 @@
 // NOTE: beware of jpg->jpeg convertion which occurs during downloads.
 //
 // Author: Laurent Bedubourg <laurent@labe.me>
+//
 
 class Picasa {
     public static var GOOGLE = "/usr/local/bin/google";

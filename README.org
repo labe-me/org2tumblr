@@ -16,6 +16,10 @@ org2tumblr also wraps googlecl to synchronize a local picasa folder on picasa an
 
 Since this project is a quick hack, don't expect it to work on your computer without some elbow's grease :)
 
+* License
+
+MIT, do what you want with this.
+
 * Requirements
 
 - tumblr-rb

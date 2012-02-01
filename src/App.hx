@@ -1,9 +1,12 @@
+//
 // Manage a blog from an org file.
 //
 // Requirements: googlecl, tumblr-rb
 //
 // sudo gem install tumblr-rb
 // http://mwunsch.github.com/tumblr/tumblr.5.html
+//
+// Author: Laurent Bedubourg <laurent@labe.me>
 //
 
 import Org;
