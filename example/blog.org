@@ -1,0 +1,31 @@
+#+TITLE: My blog title
+#+STARTUP: inlineimages
+:PROPERTIES:
+:TYPE: tumblr
+:BLOG: myblog.tumblr.com
+:USER: my-tumblr-user-email@example.com
+:END:
+* This is a local draft
+Bla bla bla bla.
+
+Show an image from picasa:
+[[./picasa/my-image.png]]
+
+Do some links:
+
+[[http://www.google.com][Google]]
+
+[[./www][Your static website]]
+
+* TODO An article which will create a draft
+
+<p>you can also write html, javascript, etc.</p>
+
+* TODO <2012-02-01 Wed> An article with a custom date
+
+This should fix the post date.
+
+* DONE An article which will be published
+CLOSED: [2012-02-01 Wed 13:29]
+
+Sooooo easy :)

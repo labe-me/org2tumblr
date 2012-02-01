@@ -1,0 +1,3 @@
+This is an example.
+This folder contains a static website you can reference with ./www insite your blog.org.
+For instance, this folder can be synchronized using make and rsync.

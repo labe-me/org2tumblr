@@ -1,0 +1,108 @@
+* About
+
+I made this little tool to synchronize my tumblr blogs (http://blog.labe.me and http://blog-fr.labe.me).
+
+The idea was to draft/post/edit my posts from emacs and org-mode and then update my blogs with make.
+
+Each blog is contained in an org file.
+
+org2tumblr transform org entries into markdown.
+
+org2tumblr keeps track of tumblr posts IDs in your org file (so entries can be updated later).
+
+org2tumblr uses TODO/DONE to create a draft and/or publish it.
+
+org2tumblr also wraps googlecl to synchronize a local picasa folder on picasa and replaces references to your local images accordingly on your blog.
+
+Since this project is a quick hack, don't expect it to work on your computer without some elbow's grease :)
+
+* Requirements
+
+- tumblr-rb
+  : gem install tumblr-rb
+
+- googlecl
+  http://code.google.com/p/googlecl/wiki/Install
+
+- haxe and neko
+  http://haxe.org
+
+- make
+
+- some time to setup and test
+
+* Installation
+
+Get org2tumblr project and then compile it
+
+: make
+: sudo make install     # will install /usr/bin/org2tumblr
+:
+: # alternatively set PREFIX like this to specify another install prefix
+:
+: make install PREFIX=$HOME/local
+
+* Configuration
+
+** create a project directory to host your blog(s)
+Follow the example structure to get an idea.
+
+** create a .tumblr credential file inside your project's root or in your home folder:
+: email: someemail@example.com
+: password: mysecret
+
+** don't forget to configure googlecl
+
+I don't remember how I did that but calling googlecl on the command line with one or two parameters should suffice :)
+
+For reference, my ~/.config/googlecl/config file looks like this:
+
+#+BEGIN_SRC
+[DOCS]
+spreadsheet_format = xls
+format = txt
+spreadsheet_editor = openoffice.org
+presentation_format = ppt
+presentation_editor = openoffice.org
+document_format = txt
+drawing_format = png
+
+[CALENDAR]
+fields = title,when
+
+[GENERAL]
+regex = True
+url_field = site
+missing_field_value = N/A
+fields = title,url-site
+cap_results = False
+max_retries = 2
+hostid = <myuser>@<mycomputer>
+retry_delay = 0.5
+date_print_format = %b %d %H:%M
+
+[YOUTUBE]
+max_results = 50
+
+[CONTACTS]
+fields = name,email
+
+[PICASA]
+skip_auth = True
+user = <myemail>
+#+END_SRC
+
+*The interesting part resides in [PICASA], the skip_auth clause which prevent a password prompt.*
+
+** create your blog file using the provided example.org file
+
+** test the synchronization calling make
+
+* Usage
+
+That's up to you.
+
+I use the Makefile and make to synchronize my blogs, picasa as well as my static website with a simple keystroke but you may prefer something else.
+
+Good luck :)
+
