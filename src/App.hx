@@ -75,6 +75,10 @@ class Text {
 
         var reg = ~/"(file:)?(\.\/)?picasa\/(.*?)"/g;
         html = reg.customReplace(html, function(r){
+            var pic = picasync.get(r.matched(3));
+            if (pic == null){
+                throw "ERROR: file not found in picasa cache: '"+r.matched(3)+"', picasa might not be synchronized with your new content yet?";
+            }
             return "\""+picasync.get(r.matched(3)).url+"\"";
         });
 
