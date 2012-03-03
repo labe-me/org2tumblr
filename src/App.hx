@@ -214,11 +214,14 @@ class App {
         var options = new Hash();
         var credfile = null;
         var staticUrl = null;
+        var reverse = false;
         while (argv.length > 0){
             var arg = argv.shift();
             if (optMatch(arg, ~/^--credentials=(.*?)$/, function(r) credfile=r.matched(1)))
                 continue;
             if (optMatch(arg, ~/^--www=(.*?)$/, function(r) staticUrl=r.matched(1)))
+                continue;
+            if (optMatch(arg, ~/^--reverse$/, function(r) reverse = true))
                 continue;
             switch (arg){
                 case "picasa": action = arg;
@@ -243,15 +246,22 @@ class App {
                 var src = neko.io.File.getContent(file);
                 var bak = src;
                 var foo = OrgParser.parse(src);
-                for (c in foo.children){
+                var lst = foo.children;
+                if (reverse){
+                    lst = new List();
+                    for (c in foo.children)
+                        lst.push(c);
+                }
+                for (c in lst){
                     var id = App.postOrgNode(foo, c, credfile, staticUrl);
                     src = TumblrId.addPostIdToOrgNode(src, c, id);
-                }
-                if (bak != src){
-                    neko.Lib.println("Updating modified org file");
-                    var out = neko.io.File.write(file, true);
-                    out.writeString(src);
-                    out.close();
+                    if (bak != src){
+                        neko.Lib.println("Updating modified org file");
+                        var out = neko.io.File.write(file, true);
+                        out.writeString(src);
+                        out.close();
+                        bak = src;
+                    }
                 }
         }
     }
