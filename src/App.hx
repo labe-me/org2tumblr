@@ -39,9 +39,9 @@ class Text {
         var reg = ~/(#\+BEGIN_EXAMPLE.*?#\+END_EXAMPLE)/gs;
         str = reg.customReplace(str, function(r){
             var s = r.matched(1);
-            s = StringTools.replace(s, "#+BEGIN_EXAMPLE", "");
-            s = StringTools.replace(s, "#+END_EXAMPLE", "");
-            s = StringTools.replace(s, "\n", "\n    ");
+            s = StringTools.replace(s, "#+BEGIN_EXAMPLE", "<pre>");
+            s = StringTools.replace(s, "#+END_EXAMPLE", "</pre>");
+            // s = StringTools.replace(s, "\n", "\n    ");
             return s;
         });
 
